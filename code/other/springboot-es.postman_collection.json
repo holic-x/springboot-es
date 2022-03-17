@@ -1,0 +1,206 @@
+{
+	"info": {
+		"_postman_id": "cc1d4760-8c52-47bb-8c09-6da8c97de049",
+		"name": "springboot-es",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "01-查看所有索引",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9200/_all",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"_all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "02-创建索引[test]",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:9200/test",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "03-删除索引[test]",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:9200/test",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "04-创建索引[person]",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:9200/person",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"person"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "05-在person中新增数据[p1]",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"first_name\" : \"John\",\r\n    \"last_name\" : \"Smith\",\r\n    \"age\" : 25,\r\n    \"about\" : \"I love to go rock climbing\",\r\n    \"interests\" : [ \"sports\", \"music\" ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9200/person/_doc/p1",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"person",
+						"_doc",
+						"p1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "06-在person中新增数据[p2]",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"first_name\" : \"John\",\r\n    \"last_name\" : \"Smith\",\r\n    \"age\" : 25,\r\n    \"about\" : \"I love to go rock climbing\",\r\n    \"interests\" : [ \"sports\", \"music\" ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9200/person/_doc/p2",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"person",
+						"_doc",
+						"p2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "07-数据搜索[根据first_name搜索]",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9200/person/_search?q=first_name:john",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"person",
+						"_search"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "first_name:john"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "01-api",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\":\"es\",\r\n    \"keyword\":\"type\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"search"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

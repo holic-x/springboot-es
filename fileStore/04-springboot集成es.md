@@ -213,13 +213,26 @@ class SpringbootEsDemoApplicationTests {
 
 ## 4.接口封装
 
-> 代码示例
+> 具体参考相应的代码示例
 
-mysql：MysqlBlog、MysqlBlogRepository
+mysql相关处理：MysqlBlog、MysqlBlogRepository
 
-es：EsBlog、EsBlogRepository
+es相关处理：EsBlog、EsBlogRepository
 
 接口封装：IndexController、DataController
 
 静态资源：index.html（主页）、blog.html（博客详情）
 
+跨域配置：CorsConfig
+
+
+
+### es操作
+
+​	es的依赖引入有两种形式，一种是使用springboot集成的spring-boot-starter-data-elasticsearch，另外一种是直接引入spring-data-elasticsearch以及关联依赖。springboot2.6.4版本集成的es是4.3.2，相应支持的es版本也有所不同，具体可参考[官网说明](https://spring.io/projects/spring-data-elasticsearch#learn)
+
+![image-20220317102344098](04-springboot集成es.assets/image-20220317102344098.png)
+
+​	查看官网或者源码，该版本ElasticsearchRepository只提供了一个searchSimilar方法（与视频中使用的search有所区别），因此在es操作的时候并没有参考视频讲解的做法，而是根据相应版本调整es操作
+
+![image-20220317103009958](04-springboot集成es.assets/image-20220317103009958.png)

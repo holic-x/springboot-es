@@ -6,7 +6,9 @@
 
 ​	项目源码：https://github.com/holic-x/springboot-es
 
-​	项目笔记：
+​	项目笔记：https://github.com/holic-x/springboot-es/tree/master/fileStore
+
+​	其他辅助资料：code/前端页面、code/other：数据库文件blog.sql、postman接口请求
 
 
 

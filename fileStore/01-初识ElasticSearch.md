@@ -78,7 +78,7 @@ GET /user/user_info/_search?q=name:张三
 
 ​	视频中引用的Elasticsearch6.3.2 最低JDK版本要求1.8
 
-​	项目中所使用的elasticsearch、logstash、kibana的版本均为 8.1.0 （es体系协同合作，尽量保持版本一致）
+​	项目中所使用的elasticsearch、logstash、kibana的版本均为 8.1.0 （es体系协同合作，尽量保持版本一致，不同版本在springboot整合操作的语法也相应有所区别）
 
 ​	[elasticsearch最新下载](https://www.elastic.co/cn/downloads/elasticsearch)、[历史版本下载](https://www.elastic.co/downloads/past-releases#elasticsearch)
 
